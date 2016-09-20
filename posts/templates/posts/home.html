@@ -1,0 +1,15 @@
+{% extends "template.html" %}
+
+{% block body %}
+    <h1>Bienvenido a Wordplease!!!</h1>
+    <p>Tu web personal de blogs</p>
+
+    {% if posts_list|length > 0 %}
+        <h2>Últimos posts publicados</h2>
+        {% for post in posts_list %}
+            <p>Título:{{ post.title }}</p>
+        {% endfor %}
+    {% else %}
+        ¡¡Sé el primero en publicar un post!!
+    {% endif %}
+{% endblock %}
