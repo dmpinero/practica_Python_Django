@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 from categories.models import Category
 
@@ -17,6 +18,7 @@ class Post(models.Model):
     modified_at = models.DateTimeField(auto_now=True)        # Fecha y hora de última modificación del post
     categories = models.ManyToManyField(Category)            # Categorías en las que se publican (un post puede
                                                              # publicarse en una o varias categorías)
+    owner = models.ForeignKey(User)                          # Clave ajena al usuario propietario del blog
 
     """
     Descripción de la entidad Post como cadena

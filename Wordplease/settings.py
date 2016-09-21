@@ -126,3 +126,22 @@ STATIC_URL = '/static/'
 
 # Login para autenticación en el sistema
 LOGIN_URL = '/login'
+
+# Log all SQL queries in debug
+# TODO; Quitar al pasar a producción
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'level': DEBUG,
+            'class':'logging.StreamHandler',
+        }
+    },
+    'loggers': {
+        'django.db.backends': {
+            'handlers': ['console'],
+            'level': 'DEBUG'
+        }
+    }
+}

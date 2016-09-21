@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+		<title>Práctica módulo FrontEnd Nina Keepcoding Master Web Development Bootcamp</title>
+
+	    <!-- Hojas de estilo -->
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+
+	<body>
+		<!-- Cabecera -->
+		<header id="cabecera">
+			<!-- Barra de navegacion oculta con elemento pulsable en tablets y smartphones-->
+			<nav class="navbar navbar-inverse navbar-fixed-top">
+			  <div class="container-fluid">
+			    <div class="navbar-header">
+			      <!-- Menú hamburguesa -->
+			      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			      </button>
+				  
+				  <!-- Logo -->
+				  <i id="logo-cabecera" class="logo glyphicon glyphicon-education"></i>
+				  <p id="nombre-app">Educat-ion</p>
+			    </div>
+
+			    <!-- Elementos del menú -->
+			    <div class="collapse navbar-collapse" id="myNavbar">
+			      <ul class="nav navbar-nav">
+			        <li class="active"><a href="#">Tecnología</a></li>
+			        <li><a href="#">Sociedad</a></li>
+			        <li><a href="#">Noticias</a></li>
+			        <li><a href="#">Novedades</a></li>
+			        <li><a href="#">Tendencias</a></li>
+			        <li><a href="#">Gadgets</a></li>
+			      </ul>
+			      <ul class="nav navbar-nav navbar-right">
+			      	<li><a href="#search">Buscar</a></li>
+			        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Registro</a></li>
+			        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+			      </ul>
+			    </div>
+			    <!-- Elementos del menú -->
+			  </div>
+			</nav>
+			
+			<!-- Buscador -->
+			<div id="search">
+			    <button type="button" class="close">×</button>
+			    <form>
+			        <input type="search" placeholder="Introduzca términos a buscar"/>
+			        <button type="submit" class="btn btn-primary">Buscar</button>
+			    </form>
+			</div>
+		</header>
+		<!-- Cabecera -->	
+
+	    <!-- Artículos -->
+		<section class="listado-articulos primera-seccion">
+			<!-- Primer artículo -->
+			<article>
+			  <div class="articulo">
+		        <h2 class="articulo-titulo">Título del artículo 1</h2>			  
+			    <div><img class="articulo-foto-autor" src="img/autor.jpeg"></div>
+			    <div class="articulo-autor-nombre">Publicado por Daniel Martínez Piñero</div>
+			    <div class="autor-fecha-publicacion">
+			        <span class="glyphicon glyphicon-time"></span>
+			        <span id="fecha-hora-publicacion1">07082016155000</span>
+			    </div>	    
+			    <div>
+			      <img class="articulo-foto" src="img/imagen_320px.png" 
+			           srcset="img/imagen_320px.png 320w, img/imagen_800px.png 768w, img/imagen_1200px.png 900w"
+			           max-width="100%">
+			    </div>
+			    <h5 class="articulo-etiqueta-label">
+			    	<span class="label label-danger">Lorem</span>
+			    	<span class="label label-primary">Ipsum</span>
+			    </h5>				
+			    <div class="articulo-parrafo-resumen">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium sequi beatae, dicta porro numquam explicabo similique quas molestias animi, unde, perspiciatis accusantium facere excepturi, voluptate a iusto reiciendis labore asperiores.
+			    </div>
+			  </div>
+			  <div class="articulo-me-gusta">
+			    <i title="Me gusta" class="glyphicon glyphicon-heart" id="articulo1-me-gusta">
+			    </i>
+			    <span id="texto-articulo1-me-gusta"></span>
+			  </div>
+			  <div class="autor-comentarios">10 comentarios</div>
+			  <div class="separador"></div>
+			</article>
+			<!-- Primer artículo -->
+
+			<!-- Segundo artículo -->
+			<article>
+				<div class="articulo">
+					<h2 class="articulo-titulo">Título del artículo 2</h2>
+					<div><img class="articulo-foto-autor" src="img/autor.jpeg"></div>
+					<div class="articulo-autor-nombre">Publicado por Daniel Martínez Piñero</div>
+			      	<div class="autor-fecha-publicacion">
+				      	<span class="glyphicon glyphicon-time"></span>
+							<span id="fecha-hora-publicacion2">10082016141100
+						</span>
+					</div>
+					<div>
+						<img class="articulo-foto" src="img/imagen_320px.png" 
+						     srcset="img/imagen_320px.png 320w, img/imagen_800px.png 768w, img/imagen_1200px.png 900w"
+						     max-width="100%">
+					</div>
+			      	<h5 class="articulo-etiqueta-label"><span class="label label-danger">Lorem</span> <span class="label label-primary">Ipsum</span></h5>				
+					<div class="articulo-parrafo-resumen">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium sequi beatae, dicta porro numquam explicabo similique quas molestias animi, unde, perspiciatis accusantium facere excepturi, voluptate a iusto reiciendis labore asperiores.
+					</div>
+				</div>
+				<div class="articulo-me-gusta">
+					<i title="Me gusta" class="glyphicon glyphicon-heart" id="articulo2-me-gusta">
+					</i>
+					<span id="texto-articulo2-me-gusta"></span>
+				</div>
+				<div class="autor-comentarios">10 comentarios</div>
+				<div class="separador"></div>
+			</article>
+			<!-- Segundo artículo -->
+
+			<!-- Tercer artículo -->
+			<article>
+			  <div class="articulo">
+			  	<h2 class="articulo-titulo">Título del artículo 3</h2>
+			    <div><img class="articulo-foto-autor" src="img/autor.jpeg"></div>
+			    <div class="articulo-autor-nombre">Publicado por Daniel Martínez Piñero</div>
+			        <div class="autor-fecha-publicacion">
+			          <span class="glyphicon glyphicon-time"></span>
+			        <span id="fecha-hora-publicacion3">28072016121800</span>
+			    </div>
+			    <div>
+			      <video preload width="592" height="336" controls>
+			        <source src="video/video.mp4" type="video/mp4">
+			      </video>
+			    </div>						
+			    <h5 class="articulo-etiqueta-label"><span class="label label-danger">Lorem</span> <span class="label label-primary">Ipsum</span></h5>				
+			    <div class="articulo-parrafo-resumen">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium sequi beatae, dicta porro numquam explicabo similique quas molestias animi, unde, perspiciatis accusantium facere excepturi, voluptate a iusto reiciendis labore asperiores.
+			    </div>
+			  </div>
+			  <div class="articulo-me-gusta">
+			    <i title="Me gusta" class="glyphicon glyphicon-heart" id="articulo3-me-gusta">
+			    </i>
+			    <span id="texto-articulo3-me-gusta"></span>
+			  </div>
+			  <div class="autor-comentarios">10 comentarios</div>
+			  <div class="separador"></div>
+			</article>		
+			<!-- Tercer artículo -->
+
+			<!-- Cuarto artículo -->
+			<article>
+			  <div class="articulo">
+			  	<h2 class="articulo-titulo">Título del artículo 4</h2>
+			    <div><img class="articulo-foto-autor" src="img/autor.jpeg"></div>
+			    <div class="articulo-autor-nombre">Publicado por Daniel Martínez Piñero</div>
+			        <div class="autor-fecha-publicacion">
+			          <span class="glyphicon glyphicon-time"></span>
+			        <span id="fecha-hora-publicacion4">28072016121800</span>
+			    </div>
+			    <div>
+			      <img class="articulo-foto" src="img/imagen_320px.png" 
+			           srcset="img/imagen_320px.png 320w, img/imagen_800px.png 768w, img/imagen_1200px.png 900w"
+			           max-width="100%">
+			    </div>
+			    <h5 class="articulo-etiqueta-label"><span class="label label-danger">Lorem</span> <span class="label label-primary">Ipsum</span></h5>				
+			    <div class="articulo-parrafo-resumen">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium sequi beatae, dicta porro numquam explicabo similique quas molestias animi, unde, perspiciatis accusantium facere excepturi, voluptate a iusto reiciendis labore asperiores.
+			    </div>
+			  </div>
+			  <div class="articulo-me-gusta">
+			    <i title="Me gusta" class="glyphicon glyphicon-heart" id="articulo4-me-gusta">
+			    </i>
+			    <span id="texto-articulo4-me-gusta"></span>
+			  </div>
+			  <div class="autor-comentarios">10 comentarios</div>
+			  <div class="separador"></div>
+			</article>
+			<!-- Cuarto artículo -->
+
+			<!-- Quinto artículo -->
+			<article>
+			  <div class="articulo">
+			  	<h2 class="articulo-titulo">Título del artículo 5</h2>
+			    <div><img class="articulo-foto-autor" src="img/autor.jpeg"></div>
+			    <div class="articulo-autor-nombre">Publicado por Daniel Martínez Piñero</div>
+			        <div class="autor-fecha-publicacion">
+			          <span class="glyphicon glyphicon-time"></span>
+			        <span id="fecha-hora-publicacion5">28072016121800</span>
+			    </div>
+			    <div>
+			      <img class="articulo-foto" src="img/imagen_320px.png" 
+			           srcset="img/imagen_320px.png 320w, img/imagen_800px.png 768w, img/imagen_1200px.png 900w"
+			           max-width="100%">
+			    </div>
+			    <h5 class="articulo-etiqueta-label"><span class="label label-danger">Lorem</span> <span class="label label-primary">Ipsum</span></h5>				
+			    <div class="articulo-parrafo-resumen">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium sequi beatae, dicta porro numquam explicabo similique quas molestias animi, unde, perspiciatis accusantium facere excepturi, voluptate a iusto reiciendis labore asperiores.
+			    </div>
+			  </div>
+			  <div class="articulo-me-gusta">
+			    <i title="Me gusta" class="glyphicon glyphicon-heart" id="articulo5-me-gusta">
+			    </i>
+			    <span id="texto-articulo5-me-gusta"></span>
+			  </div>
+			  <div class="autor-comentarios">10 comentarios</div>
+			  <div class="separador"></div>
+			</article>
+			<!-- Quinto artículo -->
+
+			<!-- Sexto artículo -->
+			<article>
+			  <div class="articulo">
+			  	<h2 class="articulo-titulo">Título del artículo 6</h2>
+			    <div><img class="articulo-foto-autor" src="img/autor.jpeg"></div>
+			    <div class="articulo-autor-nombre">Publicado por Daniel Martínez Piñero</div>
+			        <div class="autor-fecha-publicacion">
+			          <span class="glyphicon glyphicon-time"></span>
+			        <span id="fecha-hora-publicacion6">28072016121800</span>
+			    </div>
+			    <div>
+			      <img class="articulo-foto" src="img/imagen_320px.png" 
+			           srcset="img/imagen_320px.png 320w, img/imagen_800px.png 768w, img/imagen_1200px.png 900w"
+			           max-width="100%">
+			    </div>
+			    <h5 class="articulo-etiqueta-label"><span class="label label-danger">Lorem</span> <span class="label label-primary">Ipsum</span></h5>				
+			    <div class="articulo-parrafo-resumen">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium sequi beatae, dicta porro numquam explicabo similique quas molestias animi, unde, perspiciatis accusantium facere excepturi, voluptate a iusto reiciendis labore asperiores.
+			    </div>
+			  </div>
+			  <div class="articulo-me-gusta">
+			    <i title="Me gusta" class="glyphicon glyphicon-heart" id="articulo6-me-gusta">
+			    </i>
+			    <span id="texto-articulo6-me-gusta"></span>
+			  </div>
+			  <div class="autor-comentarios">10 comentarios</div>
+			  <div class="separador"></div>
+			</article>
+			<!-- Sexto artículo -->
+
+			<!-- Séptimo artículo -->
+			<article>
+			  <div class="articulo">
+			  	<h2 class="articulo-titulo">Título del artículo 7</h2>
+			    <div><img class="articulo-foto-autor" src="img/autor.jpeg"></div>
+			    <div class="articulo-autor-nombre">Publicado por Daniel Martínez Piñero</div>
+			        <div class="autor-fecha-publicacion">
+			          <span class="glyphicon glyphicon-time"></span>
+			        <span id="fecha-hora-publicacion7">28072016121800</span>
+			    </div>
+			    <div>
+			      <img class="articulo-foto" src="img/imagen_320px.png" 
+			           srcset="img/imagen_320px.png 320w, img/imagen_800px.png 768w, img/imagen_1200px.png 900w"
+			           max-width="100%">
+			    </div>
+			    <h5 class="articulo-etiqueta-label"><span class="label label-danger">Lorem</span> <span class="label label-primary">Ipsum</span></h5>				
+			    <div class="articulo-parrafo-resumen">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium sequi beatae, dicta porro numquam explicabo similique quas molestias animi, unde, perspiciatis accusantium facere excepturi, voluptate a iusto reiciendis labore asperiores.
+			    </div>
+			  </div>
+			  <div class="articulo-me-gusta">
+			    <i title="Me gusta" class="glyphicon glyphicon-heart" id="articulo7-me-gusta">
+			    </i>
+			    <span id="texto-articulo7-me-gusta"></span>
+			  </div>
+			  <div class="autor-comentarios">10 comentarios</div>
+			  <div class="separador"></div>
+			</article>
+			<!-- Séptimo artículo -->
+
+			<!-- Octavo artículo -->
+			<article>
+			  <div class="articulo">
+			  	<h2 class="articulo-titulo">Título del artículo 8</h2>
+			    <div><img class="articulo-foto-autor" src="img/autor.jpeg"></div>
+			    <div class="articulo-autor-nombre">Publicado por Daniel Martínez Piñero
+			    </div>
+		        <div class="autor-fecha-publicacion">
+		          <span class="glyphicon glyphicon-time"></span>
+		          <span id="fecha-hora-publicacion8">28072016121800</span>
+			    </div>
+			    <div>
+			      <img class="articulo-foto" src="img/imagen_320px.png" 
+			           srcset="img/imagen_320px.png 320w, img/imagen_800px.png 768w, img/imagen_1200px.png 900w"
+			           max-width="100%">
+			    </div>
+			    <h5 class="articulo-etiqueta-label"><span class="label label-danger">Lorem</span> <span class="label label-primary">Ipsum</span></h5>				
+			    <div class="articulo-parrafo-resumen">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium sequi beatae, dicta porro numquam explicabo similique quas molestias animi, unde, perspiciatis accusantium facere excepturi, voluptate a iusto reiciendis labore asperiores.
+			    </div>
+			  </div>
+			  <div class="articulo-me-gusta">
+			    <i title="Me gusta" class="glyphicon glyphicon-heart" id="articulo8-me-gusta">
+			    </i>
+			    <span id="texto-articulo8-me-gusta"></span>
+			  </div>
+			  <div class="autor-comentarios">10 comentarios</div>
+			  <div class="separador"></div>
+			</article>
+			<!-- Octavo artículo -->
+
+			<!-- Noveno artículo -->
+			<article>
+			  <div class="articulo">
+			  	<h2 class="articulo-titulo">Título del artículo 9</h2>
+			    <div><i class="articulo-foto-autor glyphicon glyphicon-user articulo-icono-autor"></i></div>
+			    <div class="articulo-autor-nombre">Publicado por Daniel Martínez Piñero</div>
+			        <div class="autor-fecha-publicacion">
+			          <span class="glyphicon glyphicon-time"></span>
+			        <span id="fecha-hora-publicacion9">27072016121800</span>
+			    </div>
+			    <div>
+			      <img class="articulo-foto" src="img/imagen_320px.png" 
+			           srcset="img/imagen_320px.png 320w, img/imagen_800px.png 768w, img/imagen_1200px.png 900w"
+			           max-width="100%">
+			    </div>
+			    <h5 class="articulo-etiqueta-label"><span class="label label-danger">Lorem</span> <span class="label label-primary">Ipsum</span></h5>				
+			    <div class="articulo-parrafo-resumen">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium sequi beatae, dicta porro numquam explicabo similique quas molestias animi, unde, perspiciatis accusantium facere excepturi, voluptate a iusto reiciendis labore asperiores.
+			    </div>
+			  </div>
+			  <div class="articulo-me-gusta">
+			    <i title="Me gusta" class="glyphicon glyphicon-heart" id="articulo9-me-gusta">
+			    </i>
+			    <span id="texto-articulo9-me-gusta"></span>
+			  </div>
+			  <div class="autor-comentarios">10 comentarios</div>
+			  <div class="separador"></div>
+			</article>
+			<!-- Noveno artículo -->
+
+			<!-- Décimo artículo -->
+			<article>
+			  <div class="articulo">
+			  	<h2 class="articulo-titulo">Título del artículo 10</h2>
+			    <div><i class="articulo-foto-autor glyphicon glyphicon-user articulo-icono-autor"></i></div>
+			    <div class="articulo-autor-nombre">Publicado por Daniel Martínez Piñero</div>
+			        <div class="autor-fecha-publicacion">
+			          <span class="glyphicon glyphicon-time"></span>
+			        <span id="fecha-hora-publicacion9">11082016120600</span>
+			    </div>
+			    <div>
+			      <img class="articulo-foto" src="img/imagen_320px.png" 
+			           srcset="img/imagen_320px.png 320w, img/imagen_800px.png 768w, img/imagen_1200px.png 900w"
+			           max-width="100%">
+			    </div>
+			    <h5 class="articulo-etiqueta-label"><span class="label label-danger">Lorem</span> <span class="label label-primary">Ipsum</span></h5>				
+			    <div class="articulo-parrafo-resumen">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium sequi beatae, dicta porro numquam explicabo similique quas molestias animi, unde, perspiciatis accusantium facere excepturi, voluptate a iusto reiciendis labore asperiores.
+			    </div>
+			  </div>
+			  <div class="articulo-me-gusta">
+			    <i title="Me gusta" class="glyphicon glyphicon-heart" id="articulo10-me-gusta">
+			    </i>
+			    <span id="texto-articulo10-me-gusta"></span>
+			  </div>
+			  <div class="autor-comentarios">50 comentarios</div>
+			  <div class="separador"></div>
+			</article>
+			<!-- Décimo artículo -->		
+		</section>
+
+		<!-- Paginación de resultados -->
+		<section>	
+			<!-- Pager con posicionamiento de botón a izquierda y derecha -->
+			<div class="container">
+				<div class="row">
+					<ul class="pager">
+						<li class="previous"><a href="#">Previous</a></li>
+						<li class="next"><a href="#">Next</a></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<!-- Paginación de resultados -->
+
+		<!-- Pie de página -->
+		<footer class="pie">
+		  	  <i class="logo glyphicon glyphicon-education"></i>
+		  	  <span class="nombre-app">Educat-ion</span>
+		  	  <a class="subir" href="#cabecera">Subir</a>	
+		</footer>
+
+		<!-- Carga de scripts -->
+		<script src="js/app.js"></script>
+	</body>
+</html>

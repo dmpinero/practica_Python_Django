@@ -9,11 +9,11 @@ from posts.models import Post
 
 class PostView(View):
     """
-    Visualiza los últimos 10 post publicados por los usuarios
+    Visualiza los últimos 5 post publicados por los usuarios
     """
     def get(self, request):
         # Devuelve los últimos 5 posts publicados por los usuarios
-        print("Obteniendo 5 últimos posts...")
+        # TODO: Los posts que se visualicen deben tener la fecha de publicación válida (a futuro no se publican)
         posts = Post.objects.filter().order_by('-created_at')
         context = {
             'posts_list': posts[:5]
@@ -35,4 +35,4 @@ class PostCreationView(View):
             'form': form,
             'success_message': ''
         }
-        return render(request, 'posts/new_post.html', context)
+        return render(request, 'posts/new-post.html', context)
