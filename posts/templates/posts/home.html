@@ -1,0 +1,19 @@
+{% extends "template.html" %}
+
+{% block body %}
+    <h1>Bienvenido a Wordplease!!!</h1>
+    <p>Tu web personal de blogs</p>
+
+    {% if posts_list|length > 0 %}
+        <h2>Últimos posts publicados</h2>
+        {% for post in posts_list %}
+            <strong><p>Título:</strong>{{ post.title }}</p>
+            {% if post.url_image_or_video != "" %}
+                <strong><p>Imagen destacada:</strong>{{ post.url_image_or_video }}</p>
+            {% endif %}
+            <strong><p>Resumen:</strong>{{ post.head }}</p>
+        {% endfor %}
+    {% else %}
+        ¡¡Sé el primero en publicar un post!!
+    {% endif %}
+{% endblock %}

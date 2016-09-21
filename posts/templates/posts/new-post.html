@@ -1,0 +1,14 @@
+{% extends "template.html" %}
+
+{% block title %}
+    WordPlease - Alta de post
+{% endblock %}
+
+{% block body %}
+    {{ message }}
+    <form method="post" novalidate>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Nuevo post</button>
+    </form>
+{% endblock %}

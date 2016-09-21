@@ -1,0 +1,13 @@
+{% extends "template.html" %}
+
+{% block body %}
+    <h1>Bienvenido a Wordplease!!!</h1>
+    <p>Detalle del post {{ post_detail.id }}</p>
+
+    <strong><p>Título:</strong>{{ post_detail.title }}</p>
+    <strong><p>Cabecera:</strong>{{ post_detail.head }}</p>
+    <strong><p>Cuerpo:</strong>{{ post_detail.body }}</p>
+    <strong><p>Imagen o video destacado:</strong>{{ post_detail.url_image_or_video }}</p>
+    <strong><p>Fecha y hora de publicación:</strong>{{ post_detail.published_at }}</p>
+    <strong><p>Categorías:</strong>{{ post_detail.categories }}</p>
+{% endblock %}

@@ -37,10 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'Wordplease',
     'blogs',
     'users',
     'posts',
+    'categories',
 ]
 
 MIDDLEWARE = [
@@ -125,3 +127,22 @@ STATIC_URL = '/static/'
 
 # Login para autenticación en el sistema
 LOGIN_URL = '/login'
+
+# Log all SQL queries in debug
+# TODO; Quitar al pasar a producción
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'level': DEBUG,
+            'class':'logging.StreamHandler',
+        }
+    },
+    'loggers': {
+        'django.db.backends': {
+            'handlers': ['console'],
+            'level': 'DEBUG'
+        }
+    }
+}
