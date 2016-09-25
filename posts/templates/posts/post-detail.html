@@ -1,13 +1,38 @@
 {% extends "template.html" %}
 
-{% block body %}
-    <h1>Bienvenido a Wordplease!!!</h1>
-    <p>Detalle del post {{ post_detail.id }}</p>
+{% load static %}
 
-    <strong><p>Título:</strong>{{ post_detail.title }}</p>
-    <strong><p>Cabecera:</strong>{{ post_detail.head }}</p>
-    <strong><p>Cuerpo:</strong>{{ post_detail.body }}</p>
-    <strong><p>Imagen o video destacado:</strong>{{ post_detail.url_image_or_video }}</p>
-    <strong><p>Fecha y hora de publicación:</strong>{{ post_detail.published_at }}</p>
-    <strong><p>Categorías:</strong>{{ post_detail.categories }}</p>
+{% block body %}
+
+		<!-- Detalle de artículo -->
+		<section>
+			<article class="articulo-detalle">
+				<h2 class="articulo-titulo">{{ post_detail.title }}</h2>
+				<div><img class="articulo-foto-autor" src="{% static 'img/autor.jpeg' %}"></div>
+				<div class="articulo-autor-nombre">Daniel Martínez Piñero 1</div>
+			    <div class="autor-fecha-publicacion">
+			        <span class="glyphicon glyphicon-time"></span>
+			        <span id="fecha-hora-publicacion1">{{ post_detail.published_at }}</span>
+			    </div>
+		        <div>
+                    <img class="articulo-foto" src="{{ post_detail.url_image_or_video }}" max-width="100%">
+					</a>
+				</div>
+			    <h5 class="articulo-etiqueta-label">Categorías
+			    	    <span class="label label-danger">Lorem</span>
+			    	    <span class="label label-primary">Ipsum</span>
+			    </h5>
+                <h2 class="articulo-titulo">Título{{ post.title }}</h2>
+				<div class="articulo-parrafo-resumen"><strong>Resumen:</strong>
+					{{ post_detail.head }}
+				</div>
+				<div class="articulo-parrafo-resumen"><strong>Cuerpo:</strong>
+					{{ post_detail.body }}
+				</div>
+				<div class="separador"></div>
+			</article>
+		</section>
+
+
+
 {% endblock %}

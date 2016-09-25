@@ -1,15 +1,15 @@
 {% extends "template.html" %}
 
 {% block body %}
-    <h1>Bienvenido a Wordplease!!!</h1>
-    <p>Tu web personal de blogs</p>
-
     {% if blogs_list|length > 0 %}
         <h2>Listado de blogs publicados</h2>
         {% for blog in blogs_list %}
+        <div class="articulo">
             <strong><p>Nombre:</strong>{{ blog.name }}</p>
             <strong><p>Descripción:</strong>{{ blog.description }}</p>
             <strong><p>Usuario creador:</strong>{{ blog.owner.first_name }} {{ blog.owner.last_name }}</p>
+            <div class="separador"></div>
+        </div>
         {% endfor %}
     {% else %}
         ¡¡Sé el primero en crear un blog!!

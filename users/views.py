@@ -15,6 +15,7 @@ class HomeUserView(View):
         """
         return render(request, 'users/login.html', None)
 
+
 class LoginView(View):
     def get(self, request):
         """

@@ -1,17 +1,33 @@
 {% extends "template.html" %}
 
-{% block body %}
-    <h1>Bienvenido a Wordplease!!!</h1>
-    <p>Tu web personal de blogs</p>
+{% load static %}
 
+{% block body %}
     {% if posts_list|length > 0 %}
         <h2>Últimos posts publicados</h2>
         {% for post in posts_list %}
-            <strong><p>Título:</strong>{{ post.title }}</p>
-            {% if post.url_image_or_video != "" %}
-                <strong><p>Imagen destacada:</strong>{{ post.url_image_or_video }}</p>
-            {% endif %}
-            <strong><p>Resumen:</strong>{{ post.head }}</p>
+	    <!-- Artículos -->
+		<section class="listado-articulos primera-seccion">
+			<!-- Inicio artículo -->
+			<article>
+			  <div class="articulo">
+		        <h2 class="articulo-titulo">{{ post.title }}</h2>
+			    <div><img class="articulo-foto-autor" src="{% static 'img/autor.jpeg' %}"></div>
+
+			    <div class="articulo-parrafo-resumen">
+                    {{ post.head }}
+			    </div>
+		        <div>
+					{% if user.is_authenticated %}
+						<a href="{% url 'blog_post_detail' user.username post.id %}">
+			      			<img class="articulo-foto" src="{{ post.url_image_or_video }}" max-width="100%">
+						</a>
+					{% endif %}
+				</div>
+			  </div>
+			  <div class="separador"></div>
+			</article>
+			<!-- Fin artículo -->
         {% endfor %}
     {% else %}
         ¡¡Sé el primero en publicar un post!!

@@ -2,6 +2,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.utils.decorators import method_decorator
 from django.views import View
+from categories.models import Category
 from posts.forms import PostForm
 from posts.models import Post
 from datetime import datetime
@@ -13,10 +14,12 @@ class PostView(View):
     def get(self, request):
         # Devuelve los últimos 5 posts publicados por los usuarios
         posts = Post.objects.filter(published_at__lt=datetime.now()).order_by('-created_at')  # Devolver posts publicados
+        categories = Category.objects.all().order_by('-id') # Devolver todas las categorías
         context = {
-            'posts_list': posts[:5]
+            'posts_list': posts[:5],
+            'category_list': categories,
         }
-        return render(request, 'posts/home.html',context)
+        return render(request, 'posts/home.html', context)
 
 # Formulario de login
 class PostCreationView(View):
@@ -65,4 +68,4 @@ class PostCreationView(View):
 
         context = {'message': message, 'form': post_form}
 
-        return render(request, 'posts/new-post.html', context)
+        return render(request, 'posts/home.html', context)
