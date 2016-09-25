@@ -1,24 +1,21 @@
 from django.contrib.auth.models import User
 from rest_framework.filters import SearchFilter, OrderingFilter
 from rest_framework.generics import ListAPIView, get_object_or_404
-from rest_framework.response import Response
-from rest_framework.viewsets import ModelViewSet
-
-from blogs.models import Blog
 from blogs.serializers import BlogSerializer
-from datetime import datetime, timezone
-
+from datetime import datetime
 from posts.models import Post
 from posts.serializers import PostListSerializer
 
 
 class BlogListAPI(ListAPIView):
     """
-    Endpoint de listado de blogs
+    Endpoint de listado de blogs (es el listado de usuarios)
     """
-    queryset = Blog.objects.all()
+    filter_backends = (SearchFilter, OrderingFilter)
+    search_fields = ('username')
+    ordering_fields = ('username')
     serializer_class = BlogSerializer
-    # TODO: Pendiente de implementar ordenación por nombre de usuario
+    queryset = User.objects.all()
 
 class PostsAPIView(ListAPIView):
     """
@@ -36,18 +33,13 @@ class PostsAPIView(ListAPIView):
         """
         blog_username = self.kwargs['blog_username']
         if not self.request.user.is_authenticated:  # Usuario no autenticado
-            # TODO: Un post futuro no debe visualizarse si el usuario no está autenticado
-            # published_at.astimezone(timezone.utc).replace(tzinfo=None) > datetime.now()
-            # posts = Post.objects.filter(published_at=).order_by('-created_at') # Devolver posts publicados
-            posts = Post.objects.all().order_by('-created_at')  # Devolver posts publicados
-
+            posts = Post.objects.filter(published_at__lt=datetime.now()).order_by('-created_at') # Devolver posts publicados
         else:  # Usuario autenticado
             user = get_object_or_404(User, username=blog_username)  # Obtener usuario del sistema
             if (self.request.user.is_superuser) or (self.request.user == blog_username):  # Usuario administrador
-                # o propietario del blog
+                                                                                          # o propietario del blog
                 posts = Post.objects.filter(owner=user).order_by('-created_at')  # Devolver todos los posts del usuario
             else:
-                # TODO. Sólo mostrar los posts publicados por el usuario
-                posts = Post.objects.filter(owner=user).order_by('-created_at')  # Devolver todos los posts publicados
+                posts = Post.objects.filter(published_at__lt=datetime.now()).order_by('-created_at')  # Devolver posts publicados
 
         return posts  # Devolver respuesta

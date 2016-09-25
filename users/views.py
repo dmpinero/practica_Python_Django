@@ -70,13 +70,7 @@ class LogoutView(View):
 
         return redirect('users_home')
 
-# TODO: Validaciones sobre los campos
-# TODO: El nombre del usuario ...
-# TODO: Los apellidos del usuario ...
-# TODO: El nombre de usuario no debe existir ya en el sistema
-# TODO: El formato del email debe ser válido
-# TODO: La contraseña debe tener...
-# TODO: Comprobar si hay algún error en la creación del usuario
+
 class SignUpView(View):
     def get(self, request):
         """
@@ -116,12 +110,6 @@ class SignUpView(View):
 
         message = 'Usuario {0} creado con éxito'.format(username)
         user.save()     # Guardar nuevo usuario
-
-        #if user.save():
-        #    message = 'Usuario {0} creado con éxito'.format(username)
-        #else:
-        #    message = 'Ha ocurrido un problema al crear el usuario'
-
         context = {'message': message, 'form': signup_form}
 
         return render(request, 'users/login.html', context)
