@@ -24,6 +24,7 @@ class BlogsUserView(View):
     """
     def get(self, request, blog_username):
         # Comprobar que existe el usuario
+        #TODO. Refactorizar
         users = User.objects.filter(username=blog_username)
         user = users[0] if len(users) == 1 else None
         if user is not None:
@@ -42,6 +43,7 @@ class BlogPostDetailView(View):
     Visualiza detalle de un post
     """
     def get(self, request, blog_username, post_id):
+        #TODO. Refactorizar
         users = User.objects.filter(username=blog_username)
         user = users[0] if len(users) == 1 else None
 

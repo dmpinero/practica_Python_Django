@@ -129,7 +129,7 @@ STATIC_URL = '/static/'
 LOGIN_URL = '/login'
 
 # Log all SQL queries in debug
-# TODO; Quitar al pasar a producción
+# TODO: Quitar al pasar a producción
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -145,4 +145,8 @@ LOGGING = {
             'level': 'DEBUG'
         }
     }
+}
+
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ('rest_framework.filters.DjangoFilterBackend',)
 }

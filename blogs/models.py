@@ -14,7 +14,7 @@ class Blog(models.Model):
     owner = models.ForeignKey(User)                          # Clave ajena al usuario propietario del blog
 
     """
-    Descripción de la entidad Post como cadena
+    Descripción de la entidad Blog como cadena
     """
     def __str__(self):
         return self.name
