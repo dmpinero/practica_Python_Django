@@ -18,9 +18,10 @@
                     <img class="articulo-foto" src="{{ post_detail.url_image_or_video }}" max-width="100%">
 					</a>
 				</div>
-			    <h5 class="articulo-etiqueta-label">Categorías
-			    	    <span class="label label-danger">Lorem</span>
-			    	    <span class="label label-primary">Ipsum</span>
+			    <h5 class="articulo-etiqueta-label"><strong>Categorías</strong>
+					{% for category in categories %}
+			    	    <span class="label label-primary">{{ category.name }}</span>
+                    {% endfor %}
 			    </h5>
                 <h2 class="articulo-titulo">Título{{ post.title }}</h2>
 				<div class="articulo-parrafo-resumen"><strong>Resumen:</strong>

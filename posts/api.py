@@ -1,7 +1,9 @@
+from datetime import datetime
 from django.shortcuts import get_object_or_404
 from rest_framework import status
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
+from rest_framework import filters
 from posts.models import Post
 from posts.serializers import PostSerializer, PostListSerializer
 from users.permissions import UserPostPermission
@@ -9,6 +11,19 @@ from users.permissions import UserPostPermission
 
 class PostViewSet(ViewSet):
     permission_classes = (UserPostPermission,)  # Aplica los permisos indicados en este módulo
+
+    def list(self, request):
+        """
+        No hace falta estar autenticado para visualizar el listado de posts
+        :param request:
+        :return:
+        """
+        filter_backends = (filters.DjangoFilterBackend,)
+        filter_fields = ('categories',)
+        posts = Post.objects.filter(published_at__lt=datetime.now()).order_by('-created_at') # Devolver posts publicados
+        serializer = PostSerializer(posts, many=True)
+
+        return Response(serializer.data)
 
     def create(self, request):
         self.check_permissions(request)
